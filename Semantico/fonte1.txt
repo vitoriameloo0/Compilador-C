@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int a, b, c;
+  a = 1;
+  b = 10;
+  c = a + b;
+
+  while (b > 5){
+    printf(^Bom dia^);
+  }
+
+ return 0;
+}

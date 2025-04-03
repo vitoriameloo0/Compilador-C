@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+    int a, b, c;
+    float 4c;
+    char d;
+    string s = "Bom dia!";
+    
+    a = 5;
+    b = 2;
+    d = a + b;
+    
+    x = 3.5;
+
+    while(a+){
+       printf(^ a todos^);
+    }
+  
+    return 0;
+}
