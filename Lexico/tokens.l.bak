@@ -1,0 +1,97 @@
+%{
+	#include<stdio.h>
+	#include"lexico.c"
+	#include "y.tab.h"
+%}
+
+	//Especificacao das regras
+
+INT	"int"
+FLOAT	"float"
+CHAR	"char"
+VOID	"void"
+IF	"if"
+ELSE	"else"
+FOR	"for"
+WHILE	"while"
+SWITCH	"switch"
+DEFAULT	"default"
+CASE	"case"
+BREAK	"break"
+RETURN	"return"
+INCREMENTO	"++"
+DECREMENTO	"--"
+IGUAL		"=="
+MENOR_IGUAL	"<="	
+MAIOR_IGUAL	">="	
+DIFERENTE	"!="
+ATRIBUICAO	[=]
+EXCLAMACAO	"!"
+PONTO_VIRGULA	";"
+DOIS_PONTO	":"
+VIRGULA		","
+MAIOR		">"
+MENOR		"<"
+CT_BARRA	"\"
+A_PARENT	"("
+F_PARENT	")"
+A_CHAVE		"{"
+F_CHAVE		"}"
+A_COLCHET	"["
+F_COLCHET	"]"
+ADICAO		"+"
+SUBTRACAO	"-" 
+MULTIPLICACAO	"*"
+DIVISAO		"/"
+ID		[a-zA-Z_]+[a-zA-Z0-9_]*
+CARACTER	['][a-zA-Z]{1}[']
+DIG_INT		[0-9]+
+DIG_FLOAT	[0-9]{1,6}[.][0-9]{0,6}
+ESPACO		[" "\n\t]+ 
+
+%%
+	//Regras
+INT		{inserir(l, "int", "undefined");}
+FLOAT		{inserir(l, "float", "undefined");}
+CHAR		{inserir(l, "char", "undefined");}
+VOID		{inserir(l, "void", "undefined");}
+IF		{inserir(l, "if", "undefined");}
+ELSE		{inserir(l, "else", "undefined");}
+FOR		{inserir(l, "for", "undefined");}
+WHILE		{inserir(l, "while", "undefined");}
+SWITCH		{inserir(l, "switch", "undefined");}
+DEFAULT		{inserir(l, "default", "undefined");}
+CASE		{inserir(l, "case", "undefined");}
+BREAK		{inserir(l, "break", "undefined");}
+RETURN		{inserir(l, "return", "undefined");}
+INCREMENTO	{inserir(l, "++", "undefined");}
+DECREMENTO	{inserir(l, "--", "undefined");}
+IGUAL		{inserir(l, "==", "undefined");}
+MENOR_IGUAL	{inserir(l, "<=", "undefined");}
+MAIOR_IGUAL	{inserir(l, ">=", "undefined");}
+DIFERENTE	{inserir(l, "!=", "undefined");}
+ATRIBUICAO	{inserir(l, "=", "undefined");}
+EXCLAMACAO	{inserir(l, "!", "undefined");}
+PONTO_VIRGULA	{inserir(l, ";", "undefined");}
+DOIS_PONTO	{inserir(l, ":", "undefined");}
+VIRGULA		{inserir(l, ",", "undefined");}
+MAIOR		{inserir(l, ">", "undefined");}
+MENOR		{inserir(l, "<", "undefined");}
+CT_BARRA	{inserir(l, "\", "undefined");}
+A_PARENT	{inserir(l, "(", "undefined");}
+F_PARENT	{inserir(l, ")", "undefined");}
+A_CHAVE		{inserir(l, "{", "undefined");}
+F_CHAVE		{inserir(l, "}", "undefined");}
+A_COLCHET	{inserir(l, "[", "undefined");}
+F_COLCHET	{inserir(l, "]", "undefined");}
+ADICAO		{inserir(l, "+", "undefined");}
+SUBTRACAO	{inserir(l, "-", "undefined");}
+MULTIPLICACAO	{inserir(l, "*", "undefined");}
+DIVISAO		{inserir(l, "/", "undefined");}
+ID		{inserir(l,yytext,"identificador");}
+CARACTER	{inserir(l,yytext ,"caracter");}
+DIG_INT		{inserir(l,yytext ,"Dig_Int");}
+DIG_FLOAT	{inserir(l,yytext ,"Dig_Float");}
+ESPACO		{;}
+%%
+

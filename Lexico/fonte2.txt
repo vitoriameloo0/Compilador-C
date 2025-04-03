@@ -1,0 +1,11 @@
+int main(){
+    float c = 1.5;
+    char #a = 'a';
+    char x;
+
+    while (c != 0){
+        x = 1ab;
+    }
+    
+    return 0;
+}
